@@ -8,3 +8,4 @@ coverage
 **/dist/**
 **/.git/**
 **/public/**
+**/.storybook/**
