@@ -6,6 +6,7 @@ import { FC } from 'react'
 
 /* Components */
 import Input from '../../components/Input'
+import Label from '../../components/Label'
 
 const Login: FC = (): JSX.Element => {
   return (
@@ -34,9 +35,7 @@ const Login: FC = (): JSX.Element => {
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
+              <Label htmlFor="email-address">Email address</Label>
               <Input
                 id="email-address"
                 name="email"
@@ -47,9 +46,7 @@ const Login: FC = (): JSX.Element => {
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
+              <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
                 name="password"
@@ -69,12 +66,12 @@ const Login: FC = (): JSX.Element => {
                 type="checkbox"
                 className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
               />
-              <label
+              <Label
                 htmlFor="remember-me"
                 className="ml-2 block text-sm text-gray-900"
               >
                 Remember me
-              </label>
+              </Label>
             </div>
 
             <div className="text-sm">
