@@ -4,13 +4,10 @@
  */
 
 import { ReactElement } from 'react'
+import Login from './pages/Login'
 
 const App = (): ReactElement => {
-  return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
-  )
+  return <Login />
 }
 
 export default App

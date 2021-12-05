@@ -1031,5 +1031,6 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  // eslint-disable-next-line global-require
+  plugins: [require('@tailwindcss/forms')],
 }
