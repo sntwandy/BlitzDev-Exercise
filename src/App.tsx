@@ -1,13 +1,18 @@
 /**
  *
- * @returns {React.ReactElement}
+ * @returns {JSX.Element}
  */
 
-import { ReactElement } from 'react'
+import ContextApp from './Context'
+
 import Login from './pages/Login'
 
-const App = (): ReactElement => {
-  return <Login />
+const App = (): JSX.Element => {
+  return (
+    <ContextApp>
+      <Login />
+    </ContextApp>
+  )
 }
 
 export default App

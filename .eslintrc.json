@@ -66,7 +66,10 @@
           "some": ["nesting", "id"]
         }
       }
-    ]
+    ],
+    "react/jsx-no-constructed-context-values": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "react/button-has-type": "off"
   },
   "settings": {
     "import/resolver": {

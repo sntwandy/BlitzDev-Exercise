@@ -6,6 +6,7 @@ import { FC } from 'react'
 
 /* Containers */
 import LoginForm from '../../containers/Forms/Login'
+import Modal from '../../containers/Modal'
 
 const LoginPage: FC = (): JSX.Element => {
   return (
@@ -18,20 +19,21 @@ const LoginPage: FC = (): JSX.Element => {
             alt="Workflow"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Write your Email and Password.
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Or{' '}
+            &{' '}
             <a
               href="https://google.com"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
-              start your 14-day free trial
+              see the magic!
             </a>
           </p>
         </div>
         <LoginForm />
       </div>
+      <Modal title="Hello, you have been hacked!!!" />
     </div>
   )
 }

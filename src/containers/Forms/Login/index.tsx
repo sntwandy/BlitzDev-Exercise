@@ -2,7 +2,8 @@
  * @returns {JSX.Element}
  */
 
-import { FC } from 'react'
+import { FC, useContext } from 'react'
+import { Context } from '../../../Context'
 
 /* Components */
 import Label from '../../../components/Label'
@@ -10,8 +11,12 @@ import Input from '../../../components/Input'
 import Button from '../../../components/Button'
 
 const Login: FC = (): JSX.Element => {
+  /* Global Context */
+  const { setIsModalOpen, isModalOpen, setUser, user, password, setPassword } =
+    useContext(Context)
+
   return (
-    <form className="mt-8 space-y-6" action="#" method="POST">
+    <form className="mt-8 space-y-6">
       <Input id="remember" type="hidden" name="remember" value="true" />
       <div className="rounded-md shadow-sm -space-y-px">
         <div>
@@ -22,7 +27,9 @@ const Login: FC = (): JSX.Element => {
             type="email"
             autoComplete="email"
             required
+            value={user}
             placeholder="Email address"
+            setData={setUser}
           />
         </div>
         <div>
@@ -34,6 +41,8 @@ const Login: FC = (): JSX.Element => {
             autoComplete="current-password"
             required
             placeholder="Password"
+            value={password}
+            setData={setPassword}
           />
         </div>
       </div>
@@ -44,6 +53,7 @@ const Login: FC = (): JSX.Element => {
             id="remember-me"
             name="remember-me"
             type="checkbox"
+            value={user}
             className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
           />
           <Label htmlFor="remember-me">Remember me</Label>
@@ -60,7 +70,13 @@ const Login: FC = (): JSX.Element => {
       </div>
 
       <div>
-        <Button type="submit">Sign in</Button>
+        <Button
+          disabled={!(user !== '' && password !== '')}
+          type="button"
+          onClick={() => setIsModalOpen(!isModalOpen)}
+        >
+          Login
+        </Button>
       </div>
     </form>
   )
