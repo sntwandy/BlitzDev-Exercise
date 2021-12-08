@@ -13,7 +13,7 @@ interface IProps {
 
 /* Default Props */
 const defaultProps = {
-  className: 'sr-only',
+  className: 'ml-2 block text-sm text-gray-900',
 }
 
 const Label: FC<IProps> = ({ htmlFor, className, children }): JSX.Element => {
